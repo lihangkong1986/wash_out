@@ -15,7 +15,9 @@ module WashOut
 
         if WashOut::Engine.namespace
           namespace = Regexp.escape WashOut::Engine.namespace.to_s
-          soap_action.gsub!(/^\"(#{namespace}(\/|#)?)?(.*)\"$/, '\3')
+          #soap_action.gsub!(/^\"(#{namespace}(\/|#)?)?(.*)\"$/, '\3')
+          soap_action.gsub!(/^\"(.*)\"$/, '\1')
+          soap_action.gsub!(/.*\//, '') # strip any namespace
         else
           soap_action = soap_action[1...-1]
         end
