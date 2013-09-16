@@ -6,6 +6,7 @@ module WashOut
       attr_accessor :style
       attr_accessor :snakecase, :camelize_output
       attr_accessor :snakecase_input, :camelize_wsdl
+      attr_accessor :reserve_attribute
       attr_accessor :wsse_username, :wsse_password
       attr_accessor :catch_xml_errors
     end
@@ -18,6 +19,7 @@ module WashOut
 
     self.snakecase_input = false
     self.camelize_wsdl   = false
+    self.reserve_attribute = false
 
     self.wsse_username = nil
     self.wsse_password = nil
